@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+	<!-- <changeSet id="createSequence-scale" author="cezamorano">
+		<preConditions onFail="MARK_RAN">
+			<not>
+				<sequenceExists sequenceName="scale_seq" schemaName="scale"/>
+			</not>
+		</preConditions>
+		<createSequence incrementBy="1"
+                        maxValue="99999999999999999999999999"
+                        minValue="0"
+                        ordered="true"
+                        schemaName="scale"
+                        sequenceName="scale_seq"
+                        startValue="0"/>
+	</changeSet>
+	
+	<changeSet id="createTable-scale" author="cezamorano">
+		<preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="scale" schemaName="scale"/>
+            </not>
+        </preConditions>
+        <createTable tableName="scale">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="groupId" type="int">
+            	<constraints nullable="false"/>
+            </column>
+            <column name="name" type="varchar(45)">
+				<constraints nullable="false"/>
+			</column>
+            <column name="description" type="varchar(256)"/>
+			<column name="creationDate" type="date"/>
+            <column name="enabled" type="boolean"/>
+        </createTable>
+    </changeSet> -->
+    
+</databaseChangeLog>

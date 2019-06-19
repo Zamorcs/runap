@@ -1,0 +1,7 @@
+apply plugin: "net.ltgt.apt"
+
+dependencies {
+	compile "org.mapstruct:mapstruct-processor:${mapstruct_version}"
+    annotationProcessor  "org.mapstruct:mapstruct-processor:${mapstruct_version}"
+    annotationProcessor  "org.hibernate:hibernate-jpamodelgen:${hibernate_version}"
+}

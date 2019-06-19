@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+	<!-- Create Tables -->
+   <!--  <include file="changelog/201812101500_create_entity_Entity.xml" relativeToChangelogFile="true"/> -->
+    
+    <!-- Foreign Keys -->
+    <!-- <include file="changelog/201812101530_create_foreign_keys_Entity.xml" relativeToChangelogFile="true"/> -->
+    
+</databaseChangeLog>
