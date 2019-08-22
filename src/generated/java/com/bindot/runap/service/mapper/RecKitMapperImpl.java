@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2019-06-12T01:56:16-0300",
+    date = "2019-08-22T02:21:30-0300",
     comments = "version: 1.2.0.Final, compiler: javac, environment: Java 1.8.0_171 (Oracle Corporation)"
 )
 @Component
@@ -65,6 +65,7 @@ public class RecKitMapperImpl implements RecKitMapper {
         recKit.setFechaInicio( dto.getFechaInicio() );
         recKit.setFechaFin( dto.getFechaFin() );
         recKit.setId( dto.getId() );
+        recKit.setEnabled( dto.getEnabled() );
 
         return recKit;
     }
@@ -89,6 +90,7 @@ public class RecKitMapperImpl implements RecKitMapper {
         recKitDTO.setDescripcion( entity.getDescripcion() );
         recKitDTO.setFechaInicio( entity.getFechaInicio() );
         recKitDTO.setFechaFin( entity.getFechaFin() );
+        recKitDTO.setEnabled( entity.getEnabled() );
 
         return recKitDTO;
     }

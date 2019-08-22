@@ -23,6 +23,8 @@ public class RecKitCriteria implements Serializable {
 
 	private Long direccionId;
 
+	private Boolean enabled;
+
 	/**
 	 * @return the id
 	 */
@@ -111,6 +113,21 @@ public class RecKitCriteria implements Serializable {
 	 */
 	public void setDireccionId(Long direccionId) {
 		this.direccionId = direccionId;
+	}
+
+	/**
+	 * @return the enabled
+	 */
+	public Boolean getEnabled() {
+		return enabled;
+	}
+
+	/**
+	 * @param enabled
+	 *            the enabled to set
+	 */
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
 	}
 
 }

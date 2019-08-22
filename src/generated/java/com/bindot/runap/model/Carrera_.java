@@ -28,7 +28,7 @@ public abstract class Carrera_ {
 	public static volatile SingularAttribute<Carrera, LocalDateTime> fechaInicioInscripcion;
 	public static volatile SingularAttribute<Carrera, Long> id;
 	public static volatile SingularAttribute<Carrera, String> webpage;
-	public static volatile SingularAttribute<Carrera, String> organizador;
+	public static volatile SingularAttribute<Carrera, Organizador> organizador;
 
 }
 

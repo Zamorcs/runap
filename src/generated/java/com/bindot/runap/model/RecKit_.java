@@ -15,6 +15,7 @@ public abstract class RecKit_ {
 	public static volatile SingularAttribute<RecKit, Long> id;
 	public static volatile SingularAttribute<RecKit, LocalDateTime> fechaFin;
 	public static volatile SingularAttribute<RecKit, Documentacion> documentacion;
+	public static volatile SingularAttribute<RecKit, Boolean> enabled;
 
 }
 

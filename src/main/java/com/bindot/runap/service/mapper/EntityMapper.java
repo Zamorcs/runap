@@ -4,14 +4,9 @@
 package com.bindot.runap.service.mapper;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-import org.mapstruct.IterableMapping;
-import org.mapstruct.Named;
-
 import com.bindot.runap.model.ARunapEntity;
-import com.bindot.runap.model.CarreraGuardada;
 
 /**
  * Contract for a generic dto to entity mapper.

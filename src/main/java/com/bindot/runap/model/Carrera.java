@@ -5,12 +5,18 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+
+import com.bindot.runap.model.util.LocalDateTimeConverter;
 
 /**
  * @author Cesar Zamorano
@@ -22,7 +28,7 @@ public class Carrera extends ARunapEntity implements Serializable {
 	private static final long serialVersionUID = -5799237538549476752L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="native")
 	@Column(name = "carrera_id")
 	private Long id;
 
@@ -30,30 +36,42 @@ public class Carrera extends ARunapEntity implements Serializable {
 
 	private String descripcion;
 
-	private String organizador;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "organizador_id")
+	private Organizador organizador;
 
 	@Column(name = "fecha_inicio")
+	@Convert(converter= LocalDateTimeConverter.class)
 	private LocalDateTime fechaInicio;
 
 	@Column(name = "fecha_fin")
+	@Convert(converter= LocalDateTimeConverter.class)
 	private LocalDateTime fechaFin;
 
-	@Column(name = "tipo_carrera")
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "tipo_carrera_id")
 	private TipoCarrera tipoCarrera;
 
 	private String webpage;
 
 	private String pais;
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="imagen_id")
 	private Imagen imagen;
 
 	@Column(name = "fecha_inicio_inscripcion")
+	@Convert(converter= LocalDateTimeConverter.class)
 	private LocalDateTime fechaInicioInscripcion;
 
 	private String novedades;
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="recorrido_id")
 	private Recorrido recorrido;
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="formato_id")
 	private Formato formato;
 
 	@ManyToMany
@@ -102,21 +120,6 @@ public class Carrera extends ARunapEntity implements Serializable {
 	 */
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
-	}
-
-	/**
-	 * @return the organizador
-	 */
-	public String getOrganizador() {
-		return organizador;
-	}
-
-	/**
-	 * @param organizador
-	 *            the organizador to set
-	 */
-	public void setOrganizador(String organizador) {
-		this.organizador = organizador;
 	}
 
 	/**
@@ -352,6 +355,20 @@ public class Carrera extends ARunapEntity implements Serializable {
 	@Override
 	public void setId(Long value) {
 		id = value;
+	}
+
+	/**
+	 * @return the organizador
+	 */
+	public Organizador getOrganizador() {
+		return organizador;
+	}
+
+	/**
+	 * @param organizador the organizador to set
+	 */
+	public void setOrganizador(Organizador organizador) {
+		this.organizador = organizador;
 	}
 
 }

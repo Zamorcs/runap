@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -18,7 +19,7 @@ public class Corredor extends ARunapEntity implements Serializable {
 	private static final long serialVersionUID = -8135018820623410415L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="native")
 	@Column(name = "corredor_id")
 	private Long id;
 

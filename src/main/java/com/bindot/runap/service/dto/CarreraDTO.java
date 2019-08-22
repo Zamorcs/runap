@@ -18,7 +18,7 @@ public class CarreraDTO implements Serializable {
 
 	private String descripcion;
 
-	private String organizador;
+	private Long organizadorId;
 
 	private LocalDateTime fechaInicio;
 
@@ -93,21 +93,6 @@ public class CarreraDTO implements Serializable {
 	 */
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
-	}
-
-	/**
-	 * @return the organizador
-	 */
-	public String getOrganizador() {
-		return organizador;
-	}
-
-	/**
-	 * @param organizador
-	 *            the organizador to set
-	 */
-	public void setOrganizador(String organizador) {
-		this.organizador = organizador;
 	}
 
 	/**
@@ -333,6 +318,20 @@ public class CarreraDTO implements Serializable {
 	 */
 	public void setEnabled(Boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	/**
+	 * @return the organizadorId
+	 */
+	public Long getOrganizadorId() {
+		return organizadorId;
+	}
+
+	/**
+	 * @param organizadorId the organizadorId to set
+	 */
+	public void setOrganizadorId(Long organizadorId) {
+		this.organizadorId = organizadorId;
 	}
 
 }

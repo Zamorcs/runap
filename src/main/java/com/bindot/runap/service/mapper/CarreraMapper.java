@@ -19,7 +19,7 @@ import com.bindot.runap.service.dto.CarreraDTO;
  */
 @Mapper(componentModel = "spring", uses = { DistanciaMapper.class, PrecioMapper.class, RecKitMapper.class,
 		DireccionMapper.class, FormatoMapper.class, RecorridoMapper.class, ImagenMapper.class,
-		TipoCarreraMapper.class })
+		TipoCarreraMapper.class, OrganizadorMapper.class })
 public interface CarreraMapper extends EntityMapper<CarreraDTO, Carrera> {
 	
 	@Override
@@ -31,6 +31,7 @@ public interface CarreraMapper extends EntityMapper<CarreraDTO, Carrera> {
 	@Mapping(source = "imagen.id", target = "imagenId")
 	@Mapping(source = "recorrido.id", target = "recorridoId")
 	@Mapping(source = "formato.id", target = "formatoId")
+	@Mapping(source = "organizador.id", target = "organizadorId")
 	CarreraDTO toDto(Carrera entity);
 
 	@Override
@@ -42,6 +43,7 @@ public interface CarreraMapper extends EntityMapper<CarreraDTO, Carrera> {
 	@Mapping(source = "imagenId", target = "imagen")
 	@Mapping(source = "recorridoId", target = "recorrido")
 	@Mapping(source = "formatoId", target = "formato")
+	@Mapping(source = "organizadorId", target = "organizador")
 	Carrera toEntity(CarreraDTO dto);
 
 	@Named("longListToEntityList")

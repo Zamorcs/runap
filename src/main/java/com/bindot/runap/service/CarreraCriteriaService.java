@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bindot.runap.model.Carrera;
@@ -16,6 +17,8 @@ import com.bindot.runap.service.dto.CarreraDTO;
 import com.bindot.runap.service.mapper.CarreraMapper;
 import com.bindot.runap.service.specification.CarreraSpecification;
 
+@Service
+@Transactional(readOnly = true)
 public class CarreraCriteriaService {
 
 	private final Logger log = LoggerFactory.getLogger(CarreraCriteriaService.class);
@@ -56,8 +59,6 @@ public class CarreraCriteriaService {
 				.map(CarreraSpecification::likeToNombre).map(specification::and).orElse(specification);
 		specification = Optional.ofNullable(criteria).map(CarreraCriteria::getDescripcion)
 				.map(CarreraSpecification::likeToDescripcion).map(specification::and).orElse(specification);
-		specification = Optional.ofNullable(criteria).map(CarreraCriteria::getOrganizador)
-				.map(CarreraSpecification::likeToOrganizador).map(specification::and).orElse(specification);
 		specification = Optional.ofNullable(criteria).map(CarreraCriteria::getFechaInicio)
 				.map(CarreraSpecification::greaterToFechaInicio).map(specification::and).orElse(specification);
 		specification = Optional.ofNullable(criteria).map(CarreraCriteria::getFechaFin)

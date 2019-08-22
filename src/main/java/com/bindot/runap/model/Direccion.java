@@ -4,8 +4,12 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  * @author Cesar Zamorano
@@ -17,11 +21,12 @@ public class Direccion extends ARunapEntity implements Serializable {
 	private static final long serialVersionUID = 5115002729219233020L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="native")
 	@Column(name = "direccion_id")
 	private Long id;
 
-	@Column(name = "tipo_direccion")
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="tipo_direccion_id")
 	private TipoDireccion tipoDireccion;
 
 	private String calle;

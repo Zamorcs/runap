@@ -4,10 +4,17 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.bindot.runap.model.util.LocalDateTimeConverter;
 
 /**
  * @author Cesar Zamorano
@@ -20,21 +27,29 @@ public class RecKit extends ARunapEntity implements Serializable {
 	private static final long serialVersionUID = 2389052538665524358L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "native")
 	@Column(name = "rec_kit_id")
 	private Long id;
 
 	private String descripcion;
 
 	@Column(name = "fecha_inicio")
+	@Convert(converter = LocalDateTimeConverter.class)
 	private LocalDateTime fechaInicio;
 
 	@Column(name = "fecha_fin")
+	@Convert(converter = LocalDateTimeConverter.class)
 	private LocalDateTime fechaFin;
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "documentacion_id")
 	private Documentacion documentacion;
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "direccion_id")
 	private Direccion direccion;
+
+	private Boolean enabled;
 
 	/**
 	 * @return the descripcion
@@ -119,6 +134,21 @@ public class RecKit extends ARunapEntity implements Serializable {
 	@Override
 	public void setId(Long value) {
 		id = value;
+	}
+
+	/**
+	 * @return the enabled
+	 */
+	public Boolean getEnabled() {
+		return enabled;
+	}
+
+	/**
+	 * @param enabled
+	 *            the enabled to set
+	 */
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
 	}
 
 }

@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -19,7 +20,7 @@ public class EstadoCalendario extends ARunapEntity implements Serializable {
 	private static final long serialVersionUID = -7003004464344849555L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="native")
 	@Column(name = "estado_calendario_id")
 	private Long id;
 

@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -17,7 +18,7 @@ public class Sexo extends ARunapEntity implements Serializable {
 	private static final long serialVersionUID = 9194421580528516858L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="native")
 	@Column(name = "sexo_id")
 	private Long id;
 

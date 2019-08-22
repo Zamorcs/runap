@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -21,7 +22,7 @@ public class Precio extends ARunapEntity implements Serializable {
 	private static final long serialVersionUID = 5999765678904752314L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="native")
 	@Column(name = "precio_id")
 	private Long id;
 

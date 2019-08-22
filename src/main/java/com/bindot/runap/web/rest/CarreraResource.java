@@ -14,6 +14,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,6 +32,8 @@ import com.bindot.runap.web.rest.error.BadRequestAlertException;
 import com.bindot.runap.web.rest.util.HeaderUtil;
 import com.bindot.runap.web.rest.util.PaginationUtil;
 import com.bindot.runap.web.rest.util.ResponseUtil;
+
+import springfox.documentation.annotations.ApiIgnore;
 
 /**
  * REST controller for managing Carrera.
@@ -114,8 +117,9 @@ public class CarreraResource {
 	 * @return the ResponseEntity with status 200 (OK) and the list of carreras in
 	 *         body
 	 */
+	@ApiPageable
 	@GetMapping("/carrera")
-	public ResponseEntity<List<CarreraDTO>> getAllCarreras(Pageable pageable) {
+	public ResponseEntity<List<CarreraDTO>> getAllCarreras(@ApiIgnore @NonNull Pageable pageable) {
 		String message = "REST request to get a page of Carreras";
 		log.debug(message);
 		Page<CarreraDTO> page = service.findAll(pageable);
@@ -133,8 +137,9 @@ public class CarreraResource {
 	 * @return the ResponseEntity with status 200 (OK) and the list of carreras in
 	 *         body
 	 */
+	@ApiPageable
 	@GetMapping("/carrera/search")
-	public ResponseEntity<List<CarreraDTO>> getAllCarreras(CarreraCriteria criteria, Pageable pageable) {
+	public ResponseEntity<List<CarreraDTO>> getAllCarreras(CarreraCriteria criteria,@ApiIgnore @NonNull Pageable pageable) {
 		log.debug("REST request to get Carreras by criteria: {}", criteria);
 		Page<CarreraDTO> page = criteriaService.findAllByCriteria(criteria, pageable);
 		HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/carrera/search");

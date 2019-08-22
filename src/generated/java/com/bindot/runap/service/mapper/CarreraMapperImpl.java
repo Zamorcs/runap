@@ -5,6 +5,7 @@ import com.bindot.runap.model.Direccion;
 import com.bindot.runap.model.Distancia;
 import com.bindot.runap.model.Formato;
 import com.bindot.runap.model.Imagen;
+import com.bindot.runap.model.Organizador;
 import com.bindot.runap.model.Precio;
 import com.bindot.runap.model.RecKit;
 import com.bindot.runap.model.Recorrido;
@@ -18,7 +19,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2019-06-12T01:56:16-0300",
+    date = "2019-08-22T02:21:30-0300",
     comments = "version: 1.2.0.Final, compiler: javac, environment: Java 1.8.0_171 (Oracle Corporation)"
 )
 @Component
@@ -40,6 +41,8 @@ public class CarreraMapperImpl implements CarreraMapper {
     private ImagenMapper imagenMapper;
     @Autowired
     private TipoCarreraMapper tipoCarreraMapper;
+    @Autowired
+    private OrganizadorMapper organizadorMapper;
 
     @Override
     public List<Carrera> toEntity(List<CarreraDTO> dtoList) {
@@ -88,19 +91,22 @@ public class CarreraMapperImpl implements CarreraMapper {
         if ( id1 != null ) {
             carreraDTO.setFormatoId( id1 );
         }
-        carreraDTO.setListaRecKits( recKitMapper.entityListToLongList( entity.getListaRecKits() ) );
-        Long id2 = entityTipoCarreraId( entity );
+        Long id2 = entityOrganizadorId( entity );
         if ( id2 != null ) {
-            carreraDTO.setTipoCarreraId( id2 );
+            carreraDTO.setOrganizadorId( id2 );
         }
-        Long id3 = entityImagenId( entity );
+        carreraDTO.setListaRecKits( recKitMapper.entityListToLongList( entity.getListaRecKits() ) );
+        Long id3 = entityTipoCarreraId( entity );
         if ( id3 != null ) {
-            carreraDTO.setImagenId( id3 );
+            carreraDTO.setTipoCarreraId( id3 );
+        }
+        Long id4 = entityImagenId( entity );
+        if ( id4 != null ) {
+            carreraDTO.setImagenId( id4 );
         }
         carreraDTO.setId( entity.getId() );
         carreraDTO.setNombre( entity.getNombre() );
         carreraDTO.setDescripcion( entity.getDescripcion() );
-        carreraDTO.setOrganizador( entity.getOrganizador() );
         carreraDTO.setFechaInicio( entity.getFechaInicio() );
         carreraDTO.setFechaFin( entity.getFechaFin() );
         carreraDTO.setWebpage( entity.getWebpage() );
@@ -128,9 +134,9 @@ public class CarreraMapperImpl implements CarreraMapper {
         carrera.setImagen( imagenMapper.fromLong( dto.getImagenId() ) );
         carrera.setListaRecKits( longListToRecKitList( dto.getListaRecKits() ) );
         carrera.setRecorrido( recorridoMapper.fromLong( dto.getRecorridoId() ) );
+        carrera.setOrganizador( organizadorMapper.fromLong( dto.getOrganizadorId() ) );
         carrera.setNombre( dto.getNombre() );
         carrera.setDescripcion( dto.getDescripcion() );
-        carrera.setOrganizador( dto.getOrganizador() );
         carrera.setFechaInicio( dto.getFechaInicio() );
         carrera.setFechaFin( dto.getFechaFin() );
         carrera.setWebpage( dto.getWebpage() );
@@ -167,6 +173,21 @@ public class CarreraMapperImpl implements CarreraMapper {
             return null;
         }
         Long id = formato.getId();
+        if ( id == null ) {
+            return null;
+        }
+        return id;
+    }
+
+    private Long entityOrganizadorId(Carrera carrera) {
+        if ( carrera == null ) {
+            return null;
+        }
+        Organizador organizador = carrera.getOrganizador();
+        if ( organizador == null ) {
+            return null;
+        }
+        Long id = organizador.getId();
         if ( id == null ) {
             return null;
         }
