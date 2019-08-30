@@ -5,12 +5,14 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 /**
  * @author Cesar Zamorano
@@ -26,9 +28,12 @@ public class Calendario extends ARunapEntity implements Serializable {
 	@Column(name = "calendario_id")
 	private Long id;
 
-	@Column(name = "estado_calendario")
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "estado_calendario_id")
 	private EstadoCalendario estadoCalendario;
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="corredor_id")
 	private Corredor corredor;
 
 	@ManyToMany

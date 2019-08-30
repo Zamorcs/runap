@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+	<!-- <changeSet id="createForeignKey-scale_question-scale_question_type" author="cezamorano">
+		<preConditions onFail="MARK_RAN">
+            <not>
+                <foreignKeyConstraintExists foreignKeyName="fk_sc_question_type"
+                 schemaName="scale" foreignKeyTableName="scale_question"/> 
+            </not>
+        </preConditions>
+		<addForeignKeyConstraint baseColumnNames="questionTypeId"
+            baseTableName="scale_question"
+            constraintName="fk_sc_question_type"
+            referencedColumnNames="id"
+            referencedTableName="scale_question_type"/>
+	</changeSet>
+	
+	<changeSet id="createForeignKey-scale_question-scale" author="cezamorano">
+		<preConditions onFail="MARK_RAN">
+            <not>
+                <foreignKeyConstraintExists foreignKeyName="fk_scale_question_scale"
+                 schemaName="scale" foreignKeyTableName="scale_question"/> 
+            </not>
+        </preConditions>
+		<addForeignKeyConstraint baseColumnNames="scaleId"
+            baseTableName="scale_question"
+            constraintName="fk_scale_question_scale"
+            referencedColumnNames="id"
+            referencedTableName="scale"/>
+	</changeSet> -->
+    
+</databaseChangeLog>

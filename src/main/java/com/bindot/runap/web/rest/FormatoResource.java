@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bindot.runap.model.Formato;
 import com.bindot.runap.service.BaseService;
-import com.bindot.runap.service.FormatoCriteriaService;
+import com.bindot.runap.service.criteria.FormatoCriteriaService;
 import com.bindot.runap.service.dto.FormatoCriteria;
 import com.bindot.runap.service.dto.FormatoDTO;
 import com.bindot.runap.web.rest.error.BadRequestAlertException;

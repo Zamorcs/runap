@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bindot.runap.model.CarreraGuardada;
 import com.bindot.runap.service.BaseService;
-import com.bindot.runap.service.CarreraGuardadaCriteriaService;
+import com.bindot.runap.service.criteria.CarreraGuardadaCriteriaService;
 import com.bindot.runap.service.dto.CarreraGuardadaCriteria;
 import com.bindot.runap.service.dto.CarreraGuardadaDTO;
 import com.bindot.runap.web.rest.error.BadRequestAlertException;

@@ -12,5 +12,5 @@ import com.bindot.runap.model.Avatar;
  *
  */
 @Repository
-public interface AvatarRepository extends BaseRepository<Avatar> {
+public interface AvatarRepository extends BaseRepository< Avatar> {
 }

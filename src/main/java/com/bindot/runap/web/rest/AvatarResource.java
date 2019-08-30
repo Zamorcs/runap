@@ -9,7 +9,6 @@ import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
@@ -26,8 +25,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bindot.runap.model.Avatar;
-import com.bindot.runap.service.AvatarCriteriaService;
 import com.bindot.runap.service.BaseService;
+import com.bindot.runap.service.criteria.AvatarCriteriaService;
 import com.bindot.runap.service.dto.AvatarCriteria;
 import com.bindot.runap.service.dto.AvatarDTO;
 import com.bindot.runap.web.rest.error.BadRequestAlertException;
@@ -51,7 +50,6 @@ public class AvatarResource {
 
 	private static final String ENTITY_NAME = "avatar";
 
-	@Autowired
 	private final BaseService<Avatar, AvatarDTO> service;
 
 	private final AvatarCriteriaService criteriaService;

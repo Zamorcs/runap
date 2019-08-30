@@ -5,9 +5,12 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  * @author Cesar Zamorano
@@ -30,9 +33,12 @@ public class Corredor extends ARunapEntity implements Serializable {
 	@Column(name = "fecha_nacimiento")
 	private LocalDateTime fechaNacimiento;
 
-	@Column(name = "tipo_corredor")
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "tipo_corredor_id")
 	private TipoCorredor tipoCorredor;
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "sexo_id")
 	private Sexo sexo;
 
 	private String social;
@@ -45,11 +51,14 @@ public class Corredor extends ARunapEntity implements Serializable {
 	@Column(name = "fecha_ultimo_login")
 	private LocalDateTime fechaUltimoLogin;
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "avatar_id")
 	private Avatar avatar;
 
-	@Column(name = "running_team")
+	@Column(name = "running_team_id")
 	private Long runningTeam;
 
+	@Column(name = "friendlist_id")
 	private Long friendlist;
 
 	private Boolean enabled;

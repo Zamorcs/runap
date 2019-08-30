@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bindot.runap.model.Recorrido;
 import com.bindot.runap.service.BaseService;
-import com.bindot.runap.service.RecorridoCriteriaService;
+import com.bindot.runap.service.criteria.RecorridoCriteriaService;
 import com.bindot.runap.service.dto.RecorridoCriteria;
 import com.bindot.runap.service.dto.RecorridoDTO;
 import com.bindot.runap.web.rest.error.BadRequestAlertException;

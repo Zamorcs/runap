@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bindot.runap.model.Distancia;
 import com.bindot.runap.service.BaseService;
-import com.bindot.runap.service.DistanciaCriteriaService;
+import com.bindot.runap.service.criteria.DistanciaCriteriaService;
 import com.bindot.runap.service.dto.DistanciaCriteria;
 import com.bindot.runap.service.dto.DistanciaDTO;
 import com.bindot.runap.web.rest.error.BadRequestAlertException;

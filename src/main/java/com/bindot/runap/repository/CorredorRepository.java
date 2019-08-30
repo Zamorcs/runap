@@ -12,5 +12,5 @@ import com.bindot.runap.model.Corredor;
  *
  */
 @Repository
-public interface CorredorRepository extends BaseRepository<Corredor> {
+public interface CorredorRepository extends BaseRepository< Corredor> {
 }

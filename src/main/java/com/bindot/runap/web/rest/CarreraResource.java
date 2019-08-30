@@ -24,8 +24,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bindot.runap.service.CarreraCriteriaService;
-import com.bindot.runap.service.CarreraService;
+import com.bindot.runap.model.Carrera;
+import com.bindot.runap.service.BaseService;
+import com.bindot.runap.service.criteria.CarreraCriteriaService;
 import com.bindot.runap.service.dto.CarreraCriteria;
 import com.bindot.runap.service.dto.CarreraDTO;
 import com.bindot.runap.web.rest.error.BadRequestAlertException;
@@ -49,11 +50,11 @@ public class CarreraResource {
 
 	private static final String ENTITY_NAME = "carrera";
 
-	private final CarreraService service;
+	private final BaseService<Carrera,CarreraDTO> service;
 
 	private final CarreraCriteriaService criteriaService;
 
-	public CarreraResource(CarreraService carreraService, CarreraCriteriaService carreraCriteriaService) {
+	public CarreraResource(BaseService<Carrera,CarreraDTO> carreraService, CarreraCriteriaService carreraCriteriaService) {
 		this.service = carreraService;
 		this.criteriaService = carreraCriteriaService;
 	}

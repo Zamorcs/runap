@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bindot.runap.model.Organizador;
 import com.bindot.runap.service.BaseService;
-import com.bindot.runap.service.OrganizadorCriteriaService;
+import com.bindot.runap.service.criteria.OrganizadorCriteriaService;
 import com.bindot.runap.service.dto.OrganizadorCriteria;
 import com.bindot.runap.service.dto.OrganizadorDTO;
 import com.bindot.runap.web.rest.error.BadRequestAlertException;

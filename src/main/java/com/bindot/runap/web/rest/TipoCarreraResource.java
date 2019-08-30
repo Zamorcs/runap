@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bindot.runap.model.TipoCarrera;
 import com.bindot.runap.service.BaseService;
-import com.bindot.runap.service.TipoCarreraCriteriaService;
+import com.bindot.runap.service.criteria.TipoCarreraCriteriaService;
 import com.bindot.runap.service.dto.TipoCarreraCriteria;
 import com.bindot.runap.service.dto.TipoCarreraDTO;
 import com.bindot.runap.web.rest.error.BadRequestAlertException;

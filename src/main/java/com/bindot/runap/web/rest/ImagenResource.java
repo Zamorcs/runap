@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bindot.runap.model.Imagen;
 import com.bindot.runap.service.BaseService;
-import com.bindot.runap.service.ImagenCriteriaService;
+import com.bindot.runap.service.criteria.ImagenCriteriaService;
 import com.bindot.runap.service.dto.ImagenCriteria;
 import com.bindot.runap.service.dto.ImagenDTO;
 import com.bindot.runap.web.rest.error.BadRequestAlertException;

@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bindot.runap.model.Precio;
 import com.bindot.runap.service.BaseService;
-import com.bindot.runap.service.PrecioCriteriaService;
+import com.bindot.runap.service.criteria.PrecioCriteriaService;
 import com.bindot.runap.service.dto.PrecioCriteria;
 import com.bindot.runap.service.dto.PrecioDTO;
 import com.bindot.runap.web.rest.error.BadRequestAlertException;

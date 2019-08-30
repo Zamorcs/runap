@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bindot.runap.model.Calendario;
 import com.bindot.runap.service.BaseService;
-import com.bindot.runap.service.CalendarioCriteriaService;
+import com.bindot.runap.service.criteria.CalendarioCriteriaService;
 import com.bindot.runap.service.dto.CalendarioCriteria;
 import com.bindot.runap.service.dto.CalendarioDTO;
 import com.bindot.runap.web.rest.error.BadRequestAlertException;

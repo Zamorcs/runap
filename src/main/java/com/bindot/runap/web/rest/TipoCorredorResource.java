@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bindot.runap.model.TipoCorredor;
 import com.bindot.runap.service.BaseService;
-import com.bindot.runap.service.TipoCorredorCriteriaService;
+import com.bindot.runap.service.criteria.TipoCorredorCriteriaService;
 import com.bindot.runap.service.dto.TipoCorredorCriteria;
 import com.bindot.runap.service.dto.TipoCorredorDTO;
 import com.bindot.runap.web.rest.error.BadRequestAlertException;

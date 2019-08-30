@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bindot.runap.model.Sexo;
 import com.bindot.runap.service.BaseService;
-import com.bindot.runap.service.SexoCriteriaService;
+import com.bindot.runap.service.criteria.SexoCriteriaService;
 import com.bindot.runap.service.dto.SexoCriteria;
 import com.bindot.runap.service.dto.SexoDTO;
 import com.bindot.runap.web.rest.error.BadRequestAlertException;

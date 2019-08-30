@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bindot.runap.model.TipoDireccion;
 import com.bindot.runap.service.BaseService;
-import com.bindot.runap.service.TipoDireccionCriteriaService;
+import com.bindot.runap.service.criteria.TipoDireccionCriteriaService;
 import com.bindot.runap.service.dto.TipoDireccionCriteria;
 import com.bindot.runap.service.dto.TipoDireccionDTO;
 import com.bindot.runap.web.rest.error.BadRequestAlertException;
